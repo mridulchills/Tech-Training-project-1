@@ -51,7 +51,6 @@ function App() {
       <header>
         <h1>Movie Explorer</h1>
         <p>Browse and search movies by title, genre, and rating.</p>
-        <p className="hint">If the public API is blocked on your network, sample movie data is shown automatically.</p>
       </header>
 
       <MovieFilters filters={filters} onFilterChange={handleFilterChange} onSearch={handleSearch} />
