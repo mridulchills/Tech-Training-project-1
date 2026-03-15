@@ -8,9 +8,9 @@ The app is designed as a training-friendly project that demonstrates core React 
 - Hooks (`useState`, `useEffect`)
 - Props and event handling
 - Conditional rendering
-- Rendering lists from API data
-- API integration with Axios
-- Graceful fallback/error handling
+- Rendering large lists from local data
+- Client-side filtering and state management
+- API-free reliability for offline/demo usage
 
 ---
 
@@ -25,10 +25,10 @@ The motivation is two-fold:
 
 ## 3) Objectives
 The primary objective is to build a movie app that:
-- Fetches movie data from an external API
+- Uses a built-in catalog of 5,000 movies
 - Lets users filter/search by title, genre, and rating
-- Shows loading and error states properly
-- Keeps working even when external API/network access is limited (using local fallback data)
+- Shows loading and empty-result states properly
+- Avoids dependency on external movie APIs
 
 ---
 
@@ -38,10 +38,10 @@ The primary objective is to build a movie app that:
 - Filter by genre
 - Filter by minimum rating
 
-### Data Fetching
-- Fetch movie data through Axios
-- Uses a dev proxy route for local development to avoid browser-side cross-origin issues
-- Includes fallback to local sample data when remote fetch fails
+### Data Source
+- Uses a built-in local movie dataset (5,000 entries)
+- No external API calls required
+- Consistent behavior across network-restricted environments
 
 ### User Feedback
 - Loading indicator while data is being fetched
@@ -58,7 +58,6 @@ The primary objective is to build a movie app that:
 ## 5) Technical Stack
 - **React** (UI library)
 - **Vite** (development/build tooling)
-- **Axios** (HTTP requests)
 - **CSS** (custom styling)
 
 ---
@@ -97,9 +96,9 @@ The primary objective is to build a movie app that:
 
 ## 8) Data Flow (High Level)
 1. App loads and requests movies.
-2. Movie service fetches from endpoint (or fallback source).
+2. Movie service filters the local dataset based on current filters.
 3. Filtered movie array is returned.
-4. App updates UI based on loading/error/data states.
+4. App updates UI based on loading/data states.
 5. User updates filters and submits search to refresh results.
 
 ---
@@ -108,9 +107,9 @@ The primary objective is to build a movie app that:
 This project reflects patterns used in production front-end teams:
 - Component decomposition for scalability
 - Side-effect management with hooks
-- API-driven UIs
-- User-friendly state handling for loading/errors
-- Graceful degradation when network dependencies fail
+- Data-driven UIs with reusable components
+- User-friendly state handling for loading/empty states
+- Reliable behavior without external network dependencies
 
 These are foundational skills for React developer roles in product teams and service companies.
 
@@ -144,4 +143,4 @@ npm run preview
 ---
 
 ## 12) Conclusion
-Movie Explorer is a compact, practical React application that combines UI development and API integration with robust fallback behavior. It is suitable both as a learning project and as a foundation for a larger movie discovery platform.
+Movie Explorer is a compact, practical React application that combines UI development with a large built-in dataset for reliable, API-free behavior. It is suitable both as a learning project and as a foundation for a larger movie discovery platform.

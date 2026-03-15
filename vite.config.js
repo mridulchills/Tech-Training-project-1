@@ -2,15 +2,5 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api/yts': {
-        target: 'https://yts.mx',
-        changeOrigin: true,
-        secure: true,
-        rewrite: (path) => path.replace(/^\/api\/yts/, '/api/v2')
-      }
-    }
-  }
+  plugins: [react()]
 });
