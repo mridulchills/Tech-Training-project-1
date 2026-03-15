@@ -22,12 +22,6 @@ h1 {
   margin-bottom: 0.2rem;
 }
 
-.hint {
-  margin-top: 0.35rem;
-  color: #475569;
-  font-size: 0.9rem;
-}
-
 .filters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
